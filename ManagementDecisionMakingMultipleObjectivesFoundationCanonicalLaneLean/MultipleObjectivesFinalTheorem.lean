@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ManagementDecisionMakingMultipleObjectivesFoundationCanonicalLaneLean.MultipleObjectivesBridgeLemmas
+import HautevilleHouse.ManagementDecisionMakingMultipleObjectivesFoundationCanonicalLaneLean.MultipleObjectivesGateLemmas
+
+namespace HautevilleHouse
+namespace ManagementDecisionMakingMultipleObjectivesFoundationCanonicalLaneLean
+
+def ConstrainedManagementClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_management_endgame (A : AdmissibleClass) :
+    ConstrainedManagementClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ManagementDecisionMakingMultipleObjectivesFoundationCanonicalLaneLean
+end HautevilleHouse
